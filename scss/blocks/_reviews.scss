@@ -1,5 +1,6 @@
 .reviews {
   margin: 0 0 100px 0;
+  overflow: hidden;
 
   @include vp-1023 {
     margin: 0 0 84px 0;
@@ -75,16 +76,16 @@
     list-style: none;
     gap: 16px;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
     @include vp-1023 {
       display: flex;
       flex-wrap: nowrap;
       overflow-x: scroll;
       margin: 0 -32px;
       padding: 0 32px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     @include vp-767 {
