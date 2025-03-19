@@ -40,10 +40,43 @@
   }
 
   &__logo {
+    color: $color-free-speech-blue;
     display: flex;
     outline: none;
-    color: $color-free-speech-blue;
     transition: color $transition-300;
+
+    &:focus-visible,
+    &:hover {
+      color: $color-light-pink;
+
+      #{$root} {
+        &__logo-icon {
+          &-cat {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+
+          &-dog {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+    &-icon {
+      &-dog {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity $transition-300, transform $transition-300;
+      }
+
+      &-cat {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity $transition-300, transform $transition-300;
+      }
+    }
   }
 
   &__icon-logo {
@@ -61,67 +94,65 @@
     }
   }
 
-  &__logo-icon-dog {
-    transform: translateY(12px);
-  }
-
-  &__user-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    justify-content: flex-end;
-
-    @include vp-1023 {
-      gap: 12px;
-    }
-
-    @include vp-767 {
-      gap: 8px;
-    }
-  }
-
-  &__user-item--burger {
-    display: none;
-
-    @include vp-1023 {
+  &__user {
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: flex;
-    }
-  }
+      align-items: center;
+      gap: 16px;
+      justify-content: flex-end;
 
-  &__user-link {
-    display: flex;
-    height: 36px;
-    width: 36px;
-    align-items: center;
-    justify-content: center;
-    color: $color-night-rider;
-    transition: color $transition-300;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
+      @include vp-1023 {
+        gap: 12px;
+      }
 
-    @include vp-767 {
-      height: 28px;
-      width: 28px;
+      @include vp-767 {
+        gap: 8px;
+      }
     }
 
-    svg {
+    &-item--burger {
+      display: none;
+
+      @include vp-1023 {
+        display: flex;
+      }
+    }
+
+    &-link {
+      display: flex;
       height: 36px;
       width: 36px;
+      align-items: center;
+      justify-content: center;
+      color: $color-night-rider;
+      transition: color $transition-300;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
 
       @include vp-767 {
         height: 28px;
         width: 28px;
       }
-    }
 
-    &:hover,
-    &:focus-visible {
-      color: $color-free-speech-blue;
+      svg {
+        height: 36px;
+        width: 36px;
+
+        @include vp-767 {
+          height: 28px;
+          width: 28px;
+        }
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: $color-free-speech-blue;
+      }
     }
   }
 }

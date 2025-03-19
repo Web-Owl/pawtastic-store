@@ -32,14 +32,47 @@
   }
 
   &__logo {
+    color: $color-free-speech-blue;
     display: flex;
     margin: 0 0 32px 0;
-    color: $color-free-speech-blue;
-    transition: color $transition-300;
     outline: none;
+    transition: color $transition-300;
+
+    &:focus-visible,
+    &:hover {
+      color: $color-light-pink;
+
+      #{$root} {
+        &__logo-icon {
+          &-cat {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+
+          &-dog {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
 
     @include vp-767 {
       margin: 0 0 28px 0;
+    }
+
+    &-icon {
+      &-dog {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity $transition-300, transform $transition-300;
+      }
+
+      &-cat {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity $transition-300, transform $transition-300;
+      }
     }
   }
 
@@ -51,10 +84,6 @@
       width: 170px;
       height: 36px;
     }
-  }
-
-  &__logo-icon-dog {
-    transform: translateY(12px);
   }
 
   &__note {
@@ -80,6 +109,36 @@
     @include vp-767 {
       margin: 0 0 8px 0;
     }
+
+    &-button {
+      align-items: center;
+      background-color: $color-free-speech-blue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      flex-shrink: 0;
+      height: 56px;
+      justify-content: center;
+      padding: 0;
+      transition: background-color $transition-300;
+      width: 56px;
+
+      @include vp-767 {
+        height: 52px;
+        width: 52px;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: $color-free-speech-blue-2;
+      }
+
+      &[disabled] {
+        background-color: $color-portage;
+        pointer-events: none;
+      }
+    }
   }
 
   &__custom-input {
@@ -94,33 +153,9 @@
     }
   }
 
-  &__form-button {
-    align-items: center;
-    background-color: $color-free-speech-blue;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    height: 56px;
-    justify-content: center;
-    padding: 0;
-    transition: background-color $transition-300;
-    width: 56px;
-
-    @include vp-767 {
-      height: 52px;
-      width: 52px;
-    }
-
-    &:hover,
-    &:focus-visible {
-      background-color: $color-free-speech-blue-2;
-    }
-  }
 
   &__conf {
-    color: rgba($color-night-rider, 0.6);
+    color: $color-night-rider-60;
     font-size: 14px;
     font-weight: 500;
     line-height: 16.8px;
@@ -131,15 +166,15 @@
       font-size: 12px;
       line-height: 14.4px;
     }
-  }
 
-  &__conf-link {
-    color: rgba($color-night-rider, 0.6);
-    transition: color $transition-300;
+    &-link {
+      color: $color-night-rider-60;
+      transition: color $transition-300;
 
-    &:hover,
-    &:focus-visible {
-      color: $color-free-speech-blue;
+      &:hover,
+      &:focus-visible {
+        color: $color-free-speech-blue;
+      }
     }
   }
 
@@ -177,22 +212,22 @@
     @include vp-767 {
       gap: 13px;
     }
-  }
 
-  &__nav-title {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 16px 0;
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 0 0 16px 0;
 
-    @include vp-1023 {
-      font-size: 18px;
-      line-height: 21.6px;
-    }
+      @include vp-1023 {
+        font-size: 18px;
+        line-height: 21.6px;
+      }
 
-    @include vp-767 {
-      font-size: 16px;
-      line-height: 19.2px;
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 19.2px;
+      }
     }
   }
 
@@ -212,7 +247,7 @@
   }
 
   &__link {
-    color: rgba($color-night-rider, 0.8);
+    color: $color-night-rider-80;
     display: flex;
     font-size: 16px;
     line-height: 19.2px;
@@ -239,23 +274,23 @@
       justify-content: unset;
       gap: 12px;
     }
+
+    &-link {
+      color: $color-night-rider-60;
+      font-size: 14px;
+      line-height: 16.8px;
+      transition: color $transition-300;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-free-speech-blue;
+      }
+    }
   }
 
   &__copyright {
-    color: rgba($color-night-rider, 0.6);
+    color: $color-night-rider-60;
     font-size: 14px;
     line-height: 16.8px;
-  }
-
-  &__bottom-link {
-    color: rgba($color-night-rider, 0.6);
-    font-size: 14px;
-    line-height: 16.8px;
-    transition: color $transition-300;
-
-    &:hover,
-    &:focus-visible {
-      color: $color-free-speech-blue;
-    }
   }
 }

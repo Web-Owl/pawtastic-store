@@ -4,7 +4,7 @@
   padding: 92px 0;
   overflow: hidden;
   border-radius: 56px;
-  height: 716px;
+  min-height: 716px;
   $root: &;
 
   @include vp-1023 {
@@ -27,7 +27,6 @@
 
     &:hover {
       #{$root}__decor {
-        //animation: dashOffsetIn 2s ease-in forwards;
         stroke-dashoffset: 0;
         opacity: 0;
         transition: stroke-dashoffset ease-in 1s, opacity 0s 1.2s;
@@ -74,13 +73,13 @@
   }
 
   &__decor {
-    position: absolute;
     left: 0;
+    pointer-events: none;
+    position: absolute;
     top: 0;
+    transition: stroke-dashoffset ease-in 1s 0.5s, opacity $transition-300;
     stroke-dasharray: 2800;
     stroke-dashoffset: 2800;
-    transition: stroke-dashoffset ease-in 1s 0.5s, opacity $transition-300;
-    //animation: dashOffsetOut 2s ease-in forwards;
 
     @media (max-width: 1480px) {
       height: 409px;
@@ -183,31 +182,3 @@
     }
   }
 }
-
-//@keyframes dashOffsetIn {
-//  0% {
-//    pointer-events: none;
-//  }
-//  50% {
-//    stroke-dashoffset: 0;
-//  }
-//  100% {
-//    pointer-events: all;
-//    stroke-dashoffset: 2800;
-//  }
-//}
-//
-//@keyframes dashOffsetOut {
-//  0% {
-//    pointer-events: none;
-//  }
-//  50% {
-//    stroke-dashoffset: 0;
-//  }
-//  100% {
-//    pointer-events: all;
-//    stroke-dashoffset: 2800;
-//  }
-//}
-
-

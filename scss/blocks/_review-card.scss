@@ -1,5 +1,5 @@
 .review-card {
-  background-color: #F8F8F8;
+  background-color: $color-white-smoke;
   border-radius: 24px;
   height: 100%;
   padding: 28px 32px 48px;
@@ -62,7 +62,7 @@
   }
 
   &__text {
-    color: rgba($color-night-rider, 0.8);
+    color: $color-night-rider-80;
     font-size: 18px;
     line-height: 23.4px;
     margin: 0;

@@ -21,17 +21,29 @@
     background-color: $color-free-speech-blue-2;
   }
 
+  &[disabled] {
+    background-color: $color-portage;
+    pointer-events: none;
+  }
+
   &--secondary {
     background-color: transparent;
     color: $color-night-rider;
     border-color: $color-free-speech-blue;
-    transition: background-color $transition-300;
+    transition: background-color $transition-300,
+      border-color $transition-300,
+      color $transition-300;
 
     &:hover,
     &:focus-visible {
       background-color: $color-free-speech-blue-2;
       border-color: $color-free-speech-blue-2;
       color: $color-white;
+    }
+
+    &[disabled] {
+      background-color: transparent;
+      border-color: $color-portage;
     }
   }
 }

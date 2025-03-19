@@ -106,10 +106,10 @@
   }
 
   &__img {
-    height: 124px;
-    width: 124px;
-    transition: transform $transition-300;
     border-radius: 50%;
+    height: 124px;
+    transition: transform $transition-300;
+    width: 124px;
 
     @media (max-width: 1280px) {
       height: 90px;

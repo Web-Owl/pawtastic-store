@@ -1,6 +1,21 @@
 .custom-input {
+  position: relative;
   width: 100%;
   $root: &;
+
+  &--error {
+    margin: 0 0 21px;
+
+    #{$root} {
+      &__error {
+        display: block;
+      }
+
+      &__field {
+        border-color: $color-red-orange;
+      }
+    }
+  }
 
   &__field {
     border: 1px solid transparent;
@@ -31,5 +46,16 @@
     &::placeholder {
       color: $color-suva-grey;
     }
+  }
+
+  &__error {
+    bottom: -4px;
+    color: $color-red-orange;
+    display: none;
+    font-size: 14px;
+    left: 0;
+    line-height: 17px;
+    position: absolute;
+    transform: translateY(100%);
   }
 }

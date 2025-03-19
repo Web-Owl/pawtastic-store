@@ -171,16 +171,24 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 16.8px;
-    color: rgba($color-night-rider, 0.6);
+    color: $color-night-rider-60;
     margin: 0;
 
     @include vp-767 {
       font-size: 12px;
       line-height: 14.4px;
     }
-  }
 
-  &__note-link {
-    text-decoration: underline;
+    &-link {
+      color: inherit;
+      outline: none;
+      text-decoration: underline;
+      transition: color $transition-300;
+
+      &:focus-visible,
+      &:hover {
+        color: $color-night-rider;
+      }
+    }
   }
 }
